@@ -1,0 +1,15 @@
+{
+  "author": "Patrik Lundqvist <pat.lundqvist@gmail.com>",
+  "name": "chip8-web",
+  "version": "0.0.1",
+  "repository": "https://github.com/Patrik-Lundqvist/chip8",
+  "license": "Apache-2.0/MIT",
+  "scripts": {
+    "start": "parcel static/index.html",
+    "build": "parcel build static/index.html --public-url /chip8/"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.10.3",
+    "parcel-plugin-wasm.rs": "1.2.6"
+  }
+}

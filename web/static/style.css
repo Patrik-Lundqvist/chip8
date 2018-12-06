@@ -1,0 +1,267 @@
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #1b180c url('./background.png') no-repeat;
+  background-position: center top;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.emulator {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.info-box {
+  border-radius: 22px;
+  border: 5px solid #c4bbb4;
+  color: #c4bbb4;
+  padding: 20px 20px 15px 20px;
+  width: 300px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.info-box-label {
+  background: #1b180c;
+  position: absolute;
+  top: -14px;
+  left: 75px;
+  padding: 0px 10px;
+  font-size: 21px;
+}
+
+.info-box-entry:not(:first-child) {
+  margin-top: 5px;
+}
+
+.debug-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.debug-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.debug-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 200px;
+  margin: 22px;
+}
+
+.monitor {
+  width: 489px;
+  height: 449px;
+  padding: 30px;
+  margin: 0 50px;
+  position: relative;
+}
+.monitor:before {
+  content: ' ';
+  position: absolute;
+  background: url('./monitor.png') no-repeat;
+  background-size: 489px 449px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+.monitor:after {
+  content: ' ';
+  position: absolute;
+  background: url('./monitor_glow.png') no-repeat;
+  background-size: 489px 449px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 110;
+  animation: flicker 0.15s infinite;
+  pointer-events: none;
+}
+
+.screen {
+  background: #1b180c;
+  height: 100%;
+  width: 100%;
+  padding: 40px 25px;
+  position: relative;
+}
+
+.display::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+.display {
+  animation: flicker 0.15s infinite;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.display-canvas {
+  width: 100%;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+}
+
+.game-info-active {
+  margin: 2px;
+  padding: 0 5px;
+  width: 80px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Lucida Console', Monaco, monospace;
+  color: rgba(38, 205, 255, 1);
+  text-shadow: 0 0 5px rgba(38, 205, 255, 0.7);
+  user-select: none;
+}
+
+.debug-info {
+  color: white;
+}
+
+.btn {
+  line-height: 20px;
+  border: 1px solid rgba(38, 205, 255, 1);
+  margin: 2px;
+  padding: 0 5px;
+  font-size: 18px;
+  cursor: pointer;
+  font-family: 'Lucida Console', Monaco, monospace;
+  color: rgba(38, 205, 255, 1);
+  text-shadow: 0 0 5px rgba(33, 201, 252, 0.7);
+  user-select: none;
+}
+
+.btn:hover {
+  border: 1px solid rgba(33, 201, 252, 1);
+  background-color: rgba(33, 201, 252, 1);
+  box-shadow: 0 0 7px rgba(33, 201, 252, 1);
+}
+
+.btn:active {
+  border: 1px solid rgba(33, 201, 252, 1);
+  color: rgba(33, 201, 252, 1);
+  background-color: rgba(33, 201, 252, 0.3);
+  box-shadow: 0 0 7px rgba(33, 201, 252, 1);
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.67861;
+  }
+  5% {
+    opacity: 0.74769;
+  }
+  10% {
+    opacity: 0.63604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.68128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.85583;
+  }
+  35% {
+    opacity: 0.77807;
+  }
+  40% {
+    opacity: 0.66559;
+  }
+  45% {
+    opacity: 0.94693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.58594;
+  }
+  60% {
+    opacity: 0.70313;
+  }
+  65% {
+    opacity: 0.81988;
+  }
+  70% {
+    opacity: 0.73455;
+  }
+  75% {
+    opacity: 0.67288;
+  }
+  80% {
+    opacity: 0.81428;
+  }
+  85% {
+    opacity: 0.80419;
+  }
+  90% {
+    opacity: 0.8003;
+  }
+  95% {
+    opacity: 0.76108;
+  }
+  100% {
+    opacity: 0.64387;
+  }
+}

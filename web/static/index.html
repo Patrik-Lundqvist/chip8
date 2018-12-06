@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>CHIP-8</title>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="./reset.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="./logo.png" class="logo" />
+      <div class="emulator">
+        <div class="monitor">
+          <div class="screen">
+            <div class="display">
+              <canvas class="display-canvas"></canvas>
+              <div class="game-info">
+                <div class="btn prev-game"><</div>
+                <div class="game-info-active"></div>
+                <div class="btn next-game">></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-box-label">The Controls</div>
+        <div class="info-box-entries controls"></div>
+      </div>
+    </div>
+    <div class="btn debug-button">~</div>
+    <div class="info-box debug-box" hidden>
+      <div class="debug-info">
+        <div class="info-box-entries debug"></div>
+        <div>
+          <div class="btn halt-button">Halt</div>
+          <div class="btn step-button">Step</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+[package]
+name = "chip8_emulator"
+version = "0.1.0"
+authors = ["Patrik Lundqvist <pat.lundqvist@gmail.com>"]
+
+[dependencies]
+rand = { git = "https://github.com/rust-lang-nursery/rand", rev = "76acffe28d5bdcf96786afb1790f095b93857e14", features = ["wasm-bindgen"] }
