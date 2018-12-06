@@ -1,0 +1,11 @@
+[package]
+name = "chip8_web"
+version = "0.1.0"
+authors = ["Patrik Lundqvist <pat.lundqvist@gmail.com>"]
+
+[dependencies]
+chip8_emulator = { path = "../../emulator" }
+wasm-bindgen = "0.2.33"
+
+[lib]
+crate-type = ["cdylib"]
